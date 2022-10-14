@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WebApi.Services;
 
-public class ProjectService : IGenericRepository<Project>
+public class ProjectService : IProjectRepository
 {
     private readonly ApplicationContext _context;
 

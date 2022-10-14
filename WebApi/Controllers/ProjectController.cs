@@ -8,9 +8,9 @@ namespace WebApi.Controllers;
 [ApiController]
 public class ProjectController : ControllerBase
 {
-    private readonly IGenericRepository<Project> _projects;
+    private readonly IProjectRepository _projects;
 
-    public ProjectController(IGenericRepository<Project> projects)
+    public ProjectController(IProjectRepository projects)
     {
         _projects = projects;
     }

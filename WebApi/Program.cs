@@ -1,5 +1,4 @@
 using DataAccess.EFCore;
-using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Services;
@@ -15,8 +14,8 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection"),
         b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
 
-builder.Services.AddScoped<IGenericRepository<Developer>, DeveloperService>();
-builder.Services.AddScoped<IGenericRepository<Project>, ProjectService>();
+builder.Services.AddScoped<IDeveloperRepository, DeveloperService>();
+builder.Services.AddScoped<IProjectRepository, ProjectService>();
 
 var app = builder.Build();
 

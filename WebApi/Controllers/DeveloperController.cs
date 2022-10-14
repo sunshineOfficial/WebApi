@@ -8,9 +8,9 @@ namespace WebApi.Controllers;
 [ApiController]
 public class DeveloperController : ControllerBase
 {
-    private readonly IGenericRepository<Developer> _developers;
+    private readonly IDeveloperRepository _developers;
 
-    public DeveloperController(IGenericRepository<Developer> developers)
+    public DeveloperController(IDeveloperRepository developers)
     {
         _developers = developers;
     }
@@ -92,5 +92,12 @@ public class DeveloperController : ControllerBase
     public async Task<IActionResult> DeleteDevelopers(IEnumerable<Developer> developers)
     {
         return Ok(await _developers.RemoveRange(developers));
+    }
+    
+    // GET: api/developer/popular/5
+    [HttpGet("popular/{count}")]
+    public async Task<IActionResult> GetPopularDevelopers(int count)
+    {
+        return Ok(_developers.GetPopularDevelopers(count));
     }
 }
