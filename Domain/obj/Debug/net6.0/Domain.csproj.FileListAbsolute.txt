@@ -1,0 +1,14 @@
+/Users/sunshine/RiderProjects/WebApi/Domain/bin/Debug/net6.0/Domain.deps.json
+/Users/sunshine/RiderProjects/WebApi/Domain/bin/Debug/net6.0/Domain.runtimeconfig.json
+/Users/sunshine/RiderProjects/WebApi/Domain/bin/Debug/net6.0/Domain.dll
+/Users/sunshine/RiderProjects/WebApi/Domain/bin/Debug/net6.0/Domain.pdb
+/Users/sunshine/RiderProjects/WebApi/Domain/obj/Debug/net6.0/Domain.csproj.AssemblyReference.cache
+/Users/sunshine/RiderProjects/WebApi/Domain/obj/Debug/net6.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sunshine/RiderProjects/WebApi/Domain/obj/Debug/net6.0/Domain.AssemblyInfoInputs.cache
+/Users/sunshine/RiderProjects/WebApi/Domain/obj/Debug/net6.0/Domain.AssemblyInfo.cs
+/Users/sunshine/RiderProjects/WebApi/Domain/obj/Debug/net6.0/Domain.csproj.CoreCompileInputs.cache
+/Users/sunshine/RiderProjects/WebApi/Domain/obj/Debug/net6.0/Domain.dll
+/Users/sunshine/RiderProjects/WebApi/Domain/obj/Debug/net6.0/refint/Domain.dll
+/Users/sunshine/RiderProjects/WebApi/Domain/obj/Debug/net6.0/Domain.pdb
+/Users/sunshine/RiderProjects/WebApi/Domain/obj/Debug/net6.0/Domain.genruntimeconfig.cache
+/Users/sunshine/RiderProjects/WebApi/Domain/obj/Debug/net6.0/ref/Domain.dll

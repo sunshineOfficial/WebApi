@@ -1,0 +1,17 @@
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/bin/Debug/net6.0/DataAccess.EFCore.deps.json
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/bin/Debug/net6.0/DataAccess.EFCore.runtimeconfig.json
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/bin/Debug/net6.0/DataAccess.EFCore.dll
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/bin/Debug/net6.0/DataAccess.EFCore.pdb
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/bin/Debug/net6.0/Domain.dll
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/bin/Debug/net6.0/Domain.pdb
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/obj/Debug/net6.0/DataAccess.EFCore.csproj.AssemblyReference.cache
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/obj/Debug/net6.0/DataAccess.EFCore.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/obj/Debug/net6.0/DataAccess.EFCore.AssemblyInfoInputs.cache
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/obj/Debug/net6.0/DataAccess.EFCore.AssemblyInfo.cs
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/obj/Debug/net6.0/DataAccess.EFCore.csproj.CoreCompileInputs.cache
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/obj/Debug/net6.0/DataAccess.EFCore.csproj.CopyComplete
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/obj/Debug/net6.0/DataAccess.EFCore.dll
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/obj/Debug/net6.0/refint/DataAccess.EFCore.dll
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/obj/Debug/net6.0/DataAccess.EFCore.pdb
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/obj/Debug/net6.0/DataAccess.EFCore.genruntimeconfig.cache
+/Users/sunshine/RiderProjects/WebApi/DataAccess.EFCore/obj/Debug/net6.0/ref/DataAccess.EFCore.dll
