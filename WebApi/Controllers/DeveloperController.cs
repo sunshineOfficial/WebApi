@@ -8,26 +8,25 @@ namespace WebApi.Controllers;
 [ApiController]
 public class DeveloperController : ControllerBase
 {
-    private readonly IUnitOfWork _unitOfWork;
+    private readonly IGenericRepository<Developer> _developers;
 
-    public DeveloperController(IUnitOfWork unitOfWork)
+    public DeveloperController(IGenericRepository<Developer> developers)
     {
-        _unitOfWork = unitOfWork;
+        _developers = developers;
     }
     
     // GET: api/developer
     [HttpGet]
     public async Task<IActionResult> GetDevelopers()
     {
-        var developers = await _unitOfWork.Developers.GetAll();
-        return Ok(developers);
+        return Ok(await _developers.GetAll());
     }
     
     // GET: api/developer/5
     [HttpGet("{id}")]
     public async Task<IActionResult> GetDeveloper(int id)
     {
-        var developer = await _unitOfWork.Developers.GetById(id);
+        var developer = await _developers.GetById(id);
         
         if (developer is null)
         {
@@ -41,10 +40,9 @@ public class DeveloperController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> PostDeveloper(Developer developer)
     {
-        _unitOfWork.Developers.Add(developer);
-        await _unitOfWork.Complete();
+        int developerId = await _developers.Add(developer);
 
-        return CreatedAtAction(nameof(GetDeveloper), new { id = developer.Id }, developer.Id);
+        return CreatedAtAction(nameof(GetDeveloper), new { id = developerId }, developerId);
     }
     
     // PUT: api/developer/5
@@ -55,38 +53,29 @@ public class DeveloperController : ControllerBase
         {
             return BadRequest();
         }
-        
-        _unitOfWork.Developers.Update(developer);
-        await _unitOfWork.Complete();
 
-        return Ok(developer);
+        return Ok(await _developers.Update(developer));
     }
     
     // DELETE: api/developer
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteDeveloper(int id)
     {
-        var developer = await _unitOfWork.Developers.GetById(id);
+        var developer = await _developers.GetById(id);
 
         if (developer is null)
         {
             return NotFound();
         }
-        
-        _unitOfWork.Developers.Remove(developer);
-        await _unitOfWork.Complete();
 
-        return Ok(developer);
+        return Ok(await _developers.Remove(developer));
     }
     
     // POST: api/developer/range
     [HttpPost("range")]
     public async Task<IActionResult> PostDevelopers(IEnumerable<Developer> developers)
     {
-        _unitOfWork.Developers.AddRange(developers);
-        await _unitOfWork.Complete();
-
-        var ids = developers.Select(d => d.Id);
+        var ids = await _developers.AddRange(developers);
 
         return CreatedAtAction(nameof(GetDevelopers), ids, ids);
     }
@@ -95,27 +84,13 @@ public class DeveloperController : ControllerBase
     [HttpPut("range")]
     public async Task<IActionResult> PutDevelopers(IEnumerable<Developer> developers)
     {
-        _unitOfWork.Developers.UpdateRange(developers);
-        await _unitOfWork.Complete();
-
-        return Ok(developers);
+        return Ok(await _developers.UpdateRange(developers));
     }
     
     // DELETE: api/developer/range
     [HttpDelete("range")]
     public async Task<IActionResult> DeleteDevelopers(IEnumerable<Developer> developers)
     {
-        _unitOfWork.Developers.RemoveRange(developers);
-        await _unitOfWork.Complete();
-
-        return Ok(developers);
-    }
-    
-    // GET: api/developer/popular/5
-    [HttpGet("popular/{count}")]
-    public async Task<IActionResult> GetPopularDevelopers(int count)
-    {
-        var developers = await _unitOfWork.Developers.GetPopularDevelopers(count);
-        return Ok(developers);
+        return Ok(await _developers.RemoveRange(developers));
     }
 }

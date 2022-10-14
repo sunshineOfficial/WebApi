@@ -1,8 +1,8 @@
 using DataAccess.EFCore;
-using DataAccess.EFCore.Repositories;
-using DataAccess.EFCore.UnitOfWork;
+using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using WebApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,10 +15,8 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection"),
         b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
 
-builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddTransient<IDeveloperRepository, DeveloperRepository>();
-builder.Services.AddTransient<IProjectRepository, ProjectRepository>();
-builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IGenericRepository<Developer>, DeveloperService>();
+builder.Services.AddScoped<IGenericRepository<Project>, ProjectService>();
 
 var app = builder.Build();
 
